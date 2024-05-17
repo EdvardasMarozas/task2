@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model carts {
+  id         Int       @id @default(autoincrement()) @db.UnsignedInt
+  cart_id    Int?      @db.UnsignedInt
+  product_id Int?      @db.UnsignedInt
+  quantity   Int       @default(1)
+  products   products? @relation(fields: [product_id], references: [id], map: "Carts_product_id_fkey")
+
+  @@index([product_id], map: "Carts_product_id_fkey")
+}
+
+model categories {
+  id       Int        @id @default(autoincrement()) @db.UnsignedInt
+  title    String
+  products products[]
+}
+
+model products {
+  id            Int         @id @default(autoincrement()) @db.UnsignedInt
+  name          String
+  price         Int
+  photo         String?
+  categories_id Int?        @db.UnsignedInt
+  carts         carts[]
+  categories    categories? @relation(fields: [categories_id], references: [id], map: "Products_categories_id_fkey")
+
+  @@index([categories_id], map: "Products_categories_id_fkey")
+}
+
+model users {
+  id    Int    @id @default(autoincrement()) @db.UnsignedInt
+  name  String
+  email String @unique(map: "Users_email_key")
+}

@@ -1,0 +1,40 @@
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding-left: 0;
+}
+.categories li {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-bottom: 2rem solid hsl(0, 0%, 70%);
+}
+.categories a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+.categories li a:hover {
+  color: hsl(0, 0%, 90%);
+  text-decoration: underline;
+}
+.categories li:first-child {
+  background-image: url("../../assets/Images/home_decor.avif");
+}
+.categories li:nth-child(2) {
+  background-image: url("../../assets/Images/outdoor_gear.avif");
+}
+.categories li:nth-child(3) {
+  background-image: url("../../assets/Images/health_and_wellness.avif");
+}
+.categories li:last-child {
+  background-image: url("../../assets/Images/electronics_and_gadgets.avif");
+  border-bottom: 0;
+}

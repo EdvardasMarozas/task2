@@ -1,0 +1,31 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  gap: 1.5rem;
+  padding: 0;
+  margin-top: 5vh;
+}
+.products li {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25rem;
+  height: 30rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+  color: black;
+}
+.products img {
+  width: 100%;
+}
+.products h3 {
+  width: 80%;
+  margin: 0 auto;
+  height: 5rem;
+}

@@ -1,5 +1,5 @@
-# task2
-Prekių katalogas
+# Prekių katalogas
+task2
 Kaip paleisti?
 
 Paleidimo žingsniai:
